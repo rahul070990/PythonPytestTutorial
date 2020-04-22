@@ -1,0 +1,5 @@
+#logic: arr[0]=variable_name
+#Then iterate through the list & compare > or < as per max,min with variable_name
+#if it is > or < then leave as it is
+#else replace variable with a[i]
+

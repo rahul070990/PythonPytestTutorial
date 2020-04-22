@@ -1,0 +1,6 @@
+from selenium import webdriver
+
+
+driver = webdriver.Chrome(executable_path='C:/Users/rahul-shar/AppData/Local/Programs/Python/Python36/Scripts/chromedriver.exe')
+driver.get('https://www.google.com')
+
