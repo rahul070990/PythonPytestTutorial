@@ -1,0 +1,41 @@
+:::::WHAT IS FIXTURE & HOW WE USE THEM?
+Fixtures are used say whenever you need to perform some Setup/Teardown method then you can use Fixtures
+Setup--    Always executed before the start of the Test Case (Ideally used as you have to start up Browser everytime before a Test Case)
+
+TearDown-- Always after the test case has been executed (Ideally when closing a browser)
+
+-----Declare it once only for 'Setup' & then use yield for Teardown (When yield is used after that it is considered to be executed after the test has been executed)
+
+--We can import pytest & use it as @pytest.fixture (That is marked as fixture)
+
+:::::HOW TO PASS THE FIXTURE?
+-----It can be done simply by passing it in the Argument
+
+
+:::::WHAT IS CONFTEST?
+It is used generally to declare the fixture from where automatically that is available for all the pytest file in that directory(always use it as same name 'conftest.py)) & then you can use it like:
+
+--Say you want to implemenet fixture at a class level from where it is accessible for allthe methods within that:
+pytest.mark.usefixture("setup") [This helps using the setup for all the test cases in the class]
+
+pytest.fixture(scope="class") [With this it will run only once before the class & once after the end test case)
+
+:::::::PARAMETERIZING USING FIXTURE?
+--Define it in conftest.py like:
+
+pytest.fixture(params=("chrome","IE","Firefox"))
+def crossBrowser(request):
+	return request.param
+
+If say for you need to send different data for different time so instead of just tuple, You can send it in LIST containing tupple like--
+
+pytest.fixture(params=[("chrome","data1","data2"),("IE","data3","data4"),"Firefox"))]
+def crossBrowser(request):
+	return request.param
+--Call the method whereever you want it afterwards
+
+:::::::::HOW TO GENERATE HTML REPORT?
+---------pip install pytest-html
+
+---------pytest --html=report.html
+

@@ -1,0 +1,42 @@
+::::::::::LOGGING??
+
+---------Logging is used to tell basically what caused the issue & it is reported in a file, Example--
+
+import logging
+
+logger = logging.getLogger(__name__)
+--logger is an object, __name__ is used so that we can know what file the error came in
+
+fileHandler = logging.fileHandler('logfile.log')
+
+logger.addHandler(fileHandler) -- fileHandler object
+
+logger.debug("")
+logger.info("")
+logger.warning("") & etc
+
+
+
+:::::::
+59988 Walkin Location- DOne
+60000- Done
+59421- 
+
+
+
+-create case US- 59160- Ask shweta & update accordingly
+-Discuss Create Exmainer case with Shweta &  update accordingly
+
+
+
+
+60557- Done
+58165- Done
+60407- DOne
+60408- DOne
+60555- DOne
+56903- Done
+58159- Done
+60554- DOne
+60556- Done
+

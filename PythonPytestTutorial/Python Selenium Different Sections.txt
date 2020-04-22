@@ -1,0 +1,113 @@
+::::::::::::Driver basic commands-
+driver.get(URL)
+driver.title
+driver.current_url
+driver.back
+driver.close/quit
+driver.refresh
+driver.maximize_window()/minimize_window()
+
+
+
+
+
+
+
+
+:::::::::::::HOw to compatre list?
+---- Create an empty list say L1>>>Append the targeted elements in the same empty list which needs to be compared(list.append)>>Create another empty list say L2>>Append the actual elements to be compared with previous list elements in L2
+---Assert both the list & the task is DONE
+
+---Use LIST concept when iterating through mutiple elements
+---Store the elements in a LIST & then using for loop >>iterate through every element
+
+
+:::::::::::::How to compare numeric value?
+
+
+---Find the element using selenium method with .text at the end & then upcast the same with the numeric desired :: int(element.text)>>>assert with the element to be compared with same logic
+
+----Table handling
+----Take the parent of the table & then look for sepcific row/column targeted & build an generic Xpath
+----Always build a generic Xpath to avoid code duplicacy
+
+
+::::::::::::How to handle child/tabs with Selenium
+---driver.window_handles[1] (It is collection of list with 0 being first/parent windows ID so from here you can select the desired child window to switch to)
+
+So you can do:
+child_window=driver.window_handles[1]
+---driver.switch_to.window(child_window)
+
+
+:::::::::::::How to travrse from child to parent
+-----It is best achievable by Xpath & below how:
+Create Xpath of your child/parent::parent_tagname
+
+:::::::::::::Waits
+Explicit, Implicit, sleep(is not preferred usually and is applied to specific element not globally)
+--Implicit WAit-- Used globally for elements-- driver.implicitly_wait(seconds)-- This should be used generally where you know that you website is subjected to specific waits on all pages approximately & then it makes no sense for you apply for each & every & page so 'SLEEP' & 'EXPLICITILY WAIT' so in that case you can use IMPLICIT WAIT globally for all elements
+
+--Explicit WAit-- Used for specific element 
+Used on specific element waiting/appearance/etc conditions to be true & you know that generally your website is fast & there are only few cases where you need to wait for some elements conditions to be true so in that case you can use this wait which provides many options like on visibility/presence etc.
+
+wait= WebDriverWait(driver, 7)
+wait.until(expected_conditions.presence_of_element_locator(By.LINK_TEXT, "India"))
+
+:::::::::::::HOw to Switch to Frame
+driver.switch_to.frame(locator)----- Switch to frame
+driver.switch_to.default-content()-- Back to normal html
+
+:::::::::::::How to handle dynamic dropdowns 
+----- Normal dropdown just select= Selct(locator finding)
+
+Dynamic--
+-- Create a generic Xpath for the items
+-- Store them in a list
+-- Iterate if that is the requirement using for loop
+
+
+:::::::::::::How to move your cursor to specific location- Actions
+action= Actions(driver)
+action.movetoelement(locator).perform
+If you need to click on sub menu option
+--Mega Menu scenarios where you hover & menu expand & you need to perform actions,Follow below steps--
+--Move to main menu using 'action.movetoelement(locator).perform'
+--Again move to sub menu option & click 'action.movetoelement(locator).click.perform
+
+It also has following functions--
+--DoubleClick (action.doble_click(element))
+--Drag & Drop
+--Right Click etc
+
+
+::::::::::::How to handle alert
+alert= driver.switch_to.alert
+alert.accept() OR alert.dismiss()
+
+::::::::::::How to scroll
+It can be done using JS executor-- So JS executor can actually access all the elements on HTML-- It is the top most layer so if in any case you are not able access element using Selenium then JS executor can access it for sure
+
+driver.execute_script("window.scrollTo(0,document.body.scrollHeight)") [0 is horizontal Scrolling & second part is the last of page means windows height--- you can provide values as well in case you need to scroll till a specific location]
+
+--Selenium has 'getattribute' which gives the text when say user enters some text in a field as .text will not work in this case
+But for such scenarios JS executor should be useful where you can gettext & also can perform click
+
+driver.execute_script('return{your choice needs to print} docuemnt.getElementsByName(locator)[index].value')
+
+ForClick(Store the element in a variable)
+driver.execute_script("arguments[0].click;", variable_name)
+
+
+
+:::::::::::::::::How to set Chrome options
+chrome_options= webdriver.ChromeOptions()
+chrome_options.add_argument("headless")
+--Sly many other options are  there like ignore certificate, start in maximize & all -- Google can help find the options
+
+driver= webdriver.Chrome(executable_path='driverpath.exe', options=chrome_options)
+
+
+::::::::::::::::::Screenshot
+driver.get_screenshot_as_file('filename with extension')
+

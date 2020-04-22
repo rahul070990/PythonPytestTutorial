@@ -1,0 +1,38 @@
+---Test changes in File for commit
+
+
+#Install pytest from cmd using pip
+#Once installed >> Create new Project & file
+
+#Any pytest file will start with test_ name
+#Any pytest method should also start with test_ name
+#Any code should be wrapped in  method
+
+
+:::::Run all tests from CMD
+-- Go to actual path of your directory & say: py.test (All the files within directory will get executed)
+-- If yoyu want to have some more information of your runned test then say: py.test -v (v is verbose which will provide some xtra info on runned test)
+
+--If you need to see the console output on cmd then say: py.test -v -s 
+
+:::::Run only specific file
+--py.test file_name -v -s
+
+:::::Run selected method from all files
+--py.test -k method_name -v -s
+
+
+:::::Tagging (MArk test case with Smoke/Sanity
+
+---Write say this to your test case- @pytest.mark.smoke
+
+Now on your CMD: py.test -m smoke -v -s
+
+::::::Run with some skip as test
+So mark your test as skip-- @pytest.mark.skip
+
+:::::Run test but do not report
+@pytest.mark.xfail
+
+
+
