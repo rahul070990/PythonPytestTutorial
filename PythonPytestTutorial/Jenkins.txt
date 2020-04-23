@@ -1,0 +1,40 @@
+-Basically used to create jobs & run builds
+
+Installation:
+-It needs installation of jdk- install latest & stable 
+-Add the path till jdk folder in system variable
+
+-Install jenkins 
+-Run jenkins from cmd > Go to path where jenkins is installed
+-Type cmd & say: java -jar jenkins.war (port no is 8080)
+
+Access:
+-Go to browser & say: localhots:8080
+-Login with user (First time password will be there in some file when downlaoded initially- Google it if not found)
+-Download/Setup all default plugins
+
+
+Configurations (configuration section):
+-Login into jenkins
+-Go to global tool configuration
+-Set up java path
+-Also configure for git >go to git installation>bin: git.exe
+-Save the changes
+-Setup python path (Run it)
+-Setup the same python path in jenkins just like java & git (till python home & of scripts folder as well: Add your drivers exe in scripts folder as well- run it may be)
+-Configure allure report as well for post build action
+
+
+Create Project:
+-Create freelance project
+-Setup all downloaded stuff
+-Path for your git repo from where latest code will be fetched
+-python home & scripts path
+-To run batch file & pytest file we need to configre 
+batch windows section
+-batch file run so that everything is dowloaded
+-pytest command to run the test cases
+-allure reporting command for after uild run
+-since allure generate first json report , so give the path from where next staged file will be teaken , save & run it
+
+
