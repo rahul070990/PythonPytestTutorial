@@ -1,0 +1,21 @@
+import all impo & necesaary packages
+
+
+main logic which is impo else everything else will follow:
+
+f = open('your json file path')[Keys in this file will be replaced with the values fetched from Excel]
+
+wk= openpyxl.load_workbook('Path of wk file')
+Sheet= wk.active/wk['Sheet_Name']
+Rows = sheet.max_row
+json_request = json.loads(f.read())
+
+for i in range(2,rows+1):
+	sheet_firstname = sheet.cell(row=1, column=1)
+	'No of value/column to be fetched>Replaced with json keys
+
+	json_request['key_name']= sheet_firstname.value
+	Sly for others as well
+
+	response = requests.post(api_url, json_request)
+	#Do assertions & other things as required!

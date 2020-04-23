@@ -7,6 +7,7 @@ API/Web Services- Basically like JARS in Selenium we have- Can be downloaded whe
 
 GET---
 ::Gets all the results as per the API (Involves main domain(like www.google.com)+uri(path like when you traverse between pages in an application)+parameters= anything after '?' is all parameters)- So provide all such details & response will be returned as per the Requests
+:Params & headres can be sent in requests.get(api url, header='value',params='value')
 
 ::Status Code- 200 OK majorly for GET Requests
 ::Use- Used to retreieve all results like Search anything & the result obtained.
@@ -17,6 +18,38 @@ POST---
 ::Use- Used for creating new users
 
 PUT---
-ggg
+::This is used for editing anything you desire- Entire data will be edited
+::Status code is generally 200
+
+
 DELETE
-PATCH
+::Used to delete data
+::Status code is 204 may be generally
+
+--------------------------------------------
+HOW TO REQUEST API?
+:When you import requests package- Then this is majorly used to post the request for the above mentioned types
+:This can then be stored into response variable & then asser the variable for:
+
+:response.content,response.text,reponse.cookies like that multiple properties are associated & can be asserted
+
+
+-------------------------------------------
+How to input data from json file for REQUEST?
+:json file is generally read for the inputs
+
+f = open('file path)
+json_request= json.loads(f.read())
+Now this the request & use it the same way as above to validate the response
+
+-For multiple data input, Another notepad has been updated
+------------------------------------------
+HOW TO VALIDATE AGAINST A SPECIFIC KEY VALUE FROM RESPONSE
+
+:: For this , YOu need to use jsonpath (import jsonpath & syntax is)
+
+x = jsonpath.jsonpath(your_request,'key_value')
+This 'x' will contain a LIST so using indexing access the value & validate it accordingly
+
+
+
