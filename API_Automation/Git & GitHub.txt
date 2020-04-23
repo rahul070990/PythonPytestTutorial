@@ -1,0 +1,57 @@
+Git- 
+Install git bash, Other tools are also used like eclipse etc
+
+--First Time Config:
+git config --global user.name "username"
+git config --global user.email "email"
+
+git config user.name (To check the username configured
+
+GitHub- Online repository with github
+My configured: rahul070990, Rahul$123@
+
+-------------------------
+Git commands for inital setup:
+
+GIT (local repo)-
+-Make a dir/folder where you need to setup your local git
+-Within that folder- Place/Paste your files/code to be pushed
+-Now go to folder path & enter git bash & hit enter
+
+Sequence of commands to be executed-
+-git init (creates the local repo)
+-git status (to check what files are available for untracked,staged, tracked- These are the 3 stages in which file is: Initially all the files be in untrack stage so to go to next stage- Do this)
+-git add ./--all (This will stag all the files- If you want to do any specific file then the name of the file)
+-git commit -m "Message for commit" (tracked stage/enter the commit message)
+
+-git remote add origin https://github.com/rahul070990/PythonPytestTutorial.git (This will add the origin of the repo in which push needs to be done- Once the new repo is generated, There will be a link which can be used in this command to set the origin)
+
+-git push origin master/git push -u origin master (this will actually push the files to Github:: Before this- First Step: Create a repo on Github & taje the link created & then use that link to set the origin & finally push the files to GitHub)
+
+::::::::::::::::::::::::::::::::::::::::::;
+
+-Due to the use of HCL Laptop- I was facing issue for pushing the code but afterwards used SSH  method instead of https)
+-Created & added ssh key as well
+
+SSh key can be created with:
+-Go to Setting>new SSh> Create new SSh> Follow the guide to be created new SSh key
+
+-$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+-Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]
+-cat ~/.ssh/id_rsa.pub (prints the generated key from image) OR
+
+-clip < ~/.ssh/id_rsa.pub
+:Once you get the key- Update the same in Settings section>Follow path for new key & update the new key
+:Copy the key & add the new key 
+:Run the queries entered above in the process
+
+
+
+
+
+
+
+
+::::::::
+
+https://github.com/rahul070990/API_Automation.git

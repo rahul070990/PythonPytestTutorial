@@ -1,0 +1,22 @@
+Basic & Major concepts:
+
+API- Application Programming Interface:
+-Majorly deals in communicating frontend with database (Business layer between frontend & Database- Just like a Waiter)
+
+API/Web Services- Basically like JARS in Selenium we have- Can be downloaded whereas Web Services cannot be downloaded & you need to deal it online with various HTTPS methods
+
+GET---
+::Gets all the results as per the API (Involves main domain(like www.google.com)+uri(path like when you traverse between pages in an application)+parameters= anything after '?' is all parameters)- So provide all such details & response will be returned as per the Requests
+
+::Status Code- 200 OK majorly for GET Requests
+::Use- Used to retreieve all results like Search anything & the result obtained.
+
+POST---
+::This involve API URL with Body input needs- provide the details and get a response to valid with may be different content provided in raw input
+::Status Code- 201 OK majorly for POST Requests
+::Use- Used for creating new users
+
+PUT---
+ggg
+DELETE
+PATCH

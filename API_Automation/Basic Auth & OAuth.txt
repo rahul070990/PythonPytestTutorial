@@ -1,0 +1,24 @@
+Basic Authentication::: Import HTTPBasicAuth
+
+import requests
+import requests.auth import HTTPBAsicAuth
+
+reponse = requests.get('Get_URL',auth = HTTPBasicAuth('username','password'))
+response.text
+
+
+OAuth:::
+
+token_url = 'Your token url'
+data= {'grant_type':'value of g_type','username':'username_value','password':'passowrd_value'}
+
+response= requests.post(token_url,data)
+token_value= jsonpath.jsonpath(response.json(),'access_token')
+
+oauth= {'Authorization':'Bearer '+token_value[0]}
+
+API_URL: 'URL to be worked on'
+response = requests.get(API_URL, headers=oauth)
+
+
+
